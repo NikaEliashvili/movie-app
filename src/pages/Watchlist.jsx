@@ -53,7 +53,7 @@ export default function Watchlist() {
   if (filteredWatchlist?.length === 0) {
     return (
       <div className="w-full text-center mt-4">
-        <h1 className="text-gray-300 font-serif text-md w-full text-left italic">
+        <h1 className="text-gray-300 font-serif text-md w-full text-center italic">
           No items found ...
         </h1>
       </div>
