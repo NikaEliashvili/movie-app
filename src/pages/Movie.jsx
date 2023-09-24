@@ -47,7 +47,7 @@ export default function Movie() {
         <LoadingDiv />
       ) : (
         <iframe
-          className="w-full h-[50vh] lg:h-[70vh]"
+          className="w-full  sm:h-[50vh] lg:h-[70vh]"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
           src={videoUrl}
@@ -61,30 +61,30 @@ export default function Movie() {
         Watch on YouTube.com
       </a>
       {!loading ? (
-        <div className="w-full  flex flex-row justify-start items-start bg-zinc-900 py-5 px-5 gap-5">
+        <div className="w-full flex flex-col sm:flex-row justify-start items-start bg-zinc-900 py-5 px-5 gap-5">
           <img
-            className="w-[150px] text-white rounded-lg"
+            className="w-[80%] mx-auto sm:mx-0 sm:w-[150px] text-white rounded-lg"
             src={imageUrl}
             alt={movieData?.title + " Poster"}
           />
 
           <div className="flex flex-col items-start justify-center ">
-            <p className="text-zinc-100 text-4xl font-bold">
+            <p className="text-zinc-100 text-2xl sm:text-4xl font-bold">
               {movieData?.title}
             </p>
             {movieData?.tagline && (
-              <p className="text-zinc-300  text-base italic font-extralight">
+              <p className="text-zinc-300 text-sm sm:text-base italic font-extralight">
                 -{movieData?.tagline}
               </p>
             )}
             <hr className="h-px w-[90%] my-1 bg-zinc-800 opacity-5" />
-            <p className="text-gray-300 font-bold">
+            <p className="text-gray-300 font-bold text-sm sm:text-base ">
               <span className="font-normal text-gray-300 ">
                 {movieData?.genres.map((g) => g.name).join(", ")}
               </span>
             </p>
             <hr className="h-px w-[90%] my-1 bg-zinc-800 opacity-5" />
-            <p className="text-gray-300 font-bold max-w-[90%]">
+            <p className="text-gray-300 font-bold max-w-[90%] text-sm sm:text-base ">
               <span className="font-sans font-normal text-gray-300">
                 {movieData?.overview}
               </span>
