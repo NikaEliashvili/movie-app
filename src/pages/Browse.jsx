@@ -44,8 +44,7 @@ const Browse = memo(function Browse({
   if (trendingLoading || topRatedLoading) {
     return <LoadingPulse />;
   }
-  // console.count("Browse Component is Triggered");
-  //
+
   return (
     <div className="w-full text-center md:px-2  min-h-fit flex flex-col items-center justify-start">
       <Billboard

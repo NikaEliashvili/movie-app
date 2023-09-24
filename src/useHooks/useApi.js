@@ -121,7 +121,6 @@ export function useMovies(url) {
           ...prev,
           error: err,
         }));
-        console.error(err);
       })
       .finally(() => {
         setData((prev) => ({
@@ -163,7 +162,6 @@ export function findMovieData(id) {
           ...prev,
           error: err,
         }));
-        console.error(err);
       })
       .finally(() => {
         setData((prev) => ({
@@ -199,12 +197,10 @@ export function MoviesByCategories(url, page, genreId = null, genre = "") {
         setTimeout(() => {
           setIsLoading(false);
         }, 500);
-        console.log(moviesData);
         setMoviesData(data.results);
         setMaxPage(data.total_pages);
       })
       .catch((err) => {
-        console.log(err, "error catched in Catch");
         setError(err);
       })
       .finally(
@@ -239,12 +235,10 @@ export function searchMovies(page, searchQuery) {
         setTimeout(() => {
           setIsLoading(false);
         }, 500);
-        console.log(moviesData);
         setMoviesData(data.results);
         setMaxPage(data.total_pages);
       })
       .catch((err) => {
-        console.log(err, "error catched in Catch");
         setError(err);
       })
       .finally(

@@ -29,7 +29,6 @@ const MoviesList = memo(function MoviesList({
         FavoritedIds={FavoritedIds}
       />
     ));
-  // localStorage.clear();
   return (
     <div className="w-full mb-2  rounded-lg ">
       <h1 className="text-white text-xl md:text-2xl w-fit mr-auto mb-0 md:mb-2 ml-1 md:ml-0">

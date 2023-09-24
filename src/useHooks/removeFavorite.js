@@ -12,5 +12,4 @@ export default function removeFavorite(movieId) {
     localStorage.setItem("favoritedItems", JSON.stringify(newFavoriteItems));
   }
 
-  console.log("Deleted Item: ");
 }

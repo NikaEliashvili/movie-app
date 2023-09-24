@@ -16,7 +16,6 @@ const Billboard = memo(function Billboard({
   handleTriggers,
   FavoritedIds,
 }) {
-  console.log(randomTrendingMovie);
   const [isFavorited, setIsFavorited] = useState(
     FavoritedIds?.some((item) => item.id === randomTrendingMovie.id) || false
   );

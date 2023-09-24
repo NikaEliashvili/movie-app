@@ -30,11 +30,10 @@ export default function SearchedMovies() {
   function incPage() {
     setCurPage((prev) => prev + 1);
   }
-  console.log(moviesData, "Before");
+
   const sortedMoviesData = moviesData?.sort((a, b) =>
     a.popularity > b.popularity ? -1 : 1
   );
-  console.log(sortedMoviesData, "Sorted?");
 
   const allMovieCards = sortedMoviesData?.map((movie) => {
     const posterBaseUrl = `${configuration?.images?.base_url}original`;

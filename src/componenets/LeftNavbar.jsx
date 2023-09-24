@@ -5,7 +5,6 @@ import { GENRE_URL } from "../useHooks/useApi";
 
 export default function LeftNavbar() {
   const { data, loading, error } = useMovies(GENRE_URL);
-  // console.log(error.stack.length, error.stack);
   return (
     <>
       <div className="bg-zinc-950 flex flex-col  h-full min-w-[10rem] w-full">
