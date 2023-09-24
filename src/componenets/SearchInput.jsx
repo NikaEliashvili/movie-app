@@ -1,14 +1,11 @@
-import { searchMovies } from "../useHooks/useApi";
-
 //
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 
 export default function SearchInputValue() {
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  const [isPressedEnter, setIsPressedEnter] = useState(false);
   const [inputValue, setInputValue] = useState("");
 
   function handleInputValue(e) {

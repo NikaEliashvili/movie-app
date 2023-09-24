@@ -1,17 +1,15 @@
-import { memo, useEffect, useState } from "react";
+import { memo, useState } from "react";
 import MovieCard from "./MovieCard";
 
 import {
   MoviesByCategories,
   configuration,
-  options,
   ALL_MOVIES_URL,
 } from "../useHooks/useApi";
 import addFavorites from "../useHooks/addFavorites";
 import removeFavorite from "../useHooks/removeFavorite";
 
 import LoadingAnim from "../componenets/LoadingAnim";
-import { useLocation } from "react-router-dom";
 import PagesChangingBtns from "./PagesChangingBtns";
 
 const AllMovies = memo(function AllMovies({ handleTriggers, FavoritedIds }) {

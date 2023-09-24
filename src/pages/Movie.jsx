@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import { useLocation, useParams, Link } from "react-router-dom";
 
 import { findMovieData, configuration } from "../useHooks/useApi";
@@ -7,8 +5,7 @@ import MovieNavbar from "../componenets/MovieNavbar";
 import LoadingAnim from "../componenets/LoadingAnim";
 
 import ErrorPage from "../pages/ErrorPage";
-import errorImgUrl from "../../public/404Error.jpg";
-
+import errorImgUrl from "/images/404error.jpg";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
 export default function Movie() {
@@ -75,9 +72,11 @@ export default function Movie() {
             <p className="text-zinc-100 text-4xl font-bold">
               {movieData?.title}
             </p>
-            <p className="text-zinc-300  text-base italic font-extralight">
-              -{movieData?.tagline}
-            </p>
+            {movieData?.tagline && (
+              <p className="text-zinc-300  text-base italic font-extralight">
+                -{movieData?.tagline}
+              </p>
+            )}
             <hr className="h-px w-[90%] my-1 bg-zinc-800 opacity-5" />
             <p className="text-gray-300 font-bold">
               <span className="font-normal text-gray-300 ">

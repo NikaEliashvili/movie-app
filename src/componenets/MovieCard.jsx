@@ -7,11 +7,7 @@ import { Link } from "react-router-dom";
 
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import lozad from "lozad";
-import errorImgUrl from "../../public/404Error.jpg";
-
-function numberWithSpaces(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-}
+import errorImgUrl from "/images/404error.jpg";
 
 const MovieCard = memo(function MovieCard({
   addFavorites,

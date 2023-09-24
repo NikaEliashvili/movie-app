@@ -3,7 +3,6 @@ import Billboard from "../componenets/Billboard";
 import MoviesList from "../componenets/MoviesList";
 import AllMovies from "../componenets/AllMovies";
 import LoadingPulse from "../componenets/LoadingPulse";
-import { Link } from "react-router-dom";
 
 import addFavorites from "../useHooks/addFavorites";
 import removeFavorite from "../useHooks/removeFavorite";

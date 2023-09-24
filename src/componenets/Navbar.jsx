@@ -11,7 +11,7 @@ export default function Navbar() {
   const { pathname } = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [isMobileScreen, setIsMobileScreen] = useState(window.innerWidth < 768);
-  const { data, loading, error } = useMovies(GENRE_URL);
+  const { data } = useMovies(GENRE_URL);
 
   function handleOpen() {
     setIsOpen((prev) => !prev);
@@ -54,7 +54,11 @@ export default function Navbar() {
     <div className="w-full relative">
       <nav className="w-full p-3  flex flex-row items-center">
         <Link to="/" className="flex flex-row justify-center items-center">
-          <img src="/main-logoV3.png" alt="Logo" className="mr-2 lg:w-10 w-6" />
+          <img
+            src="/images/main-logoV3.png"
+            alt="Logo"
+            className="mr-2 lg:w-10 w-6"
+          />
           {!isMobileScreen && (
             <h1 className="text-gray-300 text-xl md:text-2xl lg:text-4xl font-semibold">
               <span className="text-red-600">Cinema</span>.Fy

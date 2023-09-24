@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 import FeedButtons from "./FeedButtons";
 import AllGenres from "./AllGenres";
 import { useMovies } from "../useHooks/useApi";

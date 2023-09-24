@@ -1,4 +1,4 @@
-import { memo, useState, useEffect } from "react";
+import { memo } from "react";
 import { configuration } from "../useHooks/useApi";
 import { useHorizontalScroll } from "../useHooks/useSideScroll";
 import MovieCard from "./MovieCard";

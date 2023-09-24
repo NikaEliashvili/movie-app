@@ -1,5 +1,5 @@
-import { memo, useEffect, useState } from "react";
-import { useParams, Link, useLocation, NavLink } from "react-router-dom";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 import { configuration, searchMovies } from "../useHooks/useApi";
 import PagesChangingBtns from "../componenets/PagesChangingBtns";

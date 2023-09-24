@@ -1,12 +1,9 @@
 import { Link } from "react-router-dom";
-import disconnectIMG from "/disconnect.svg";
+import disconnectIMG from "/images/disconnect.svg";
 
 export default function ErrorPage() {
   return (
     <div className="relative w-full h-[100vh] bg-slate-950 flex justify-center items-center ">
-      {/* <h1 className="text-4xl font-mono font-extrabold text-gray-300">
-        404 | Page Not Found
-      </h1> */}
       <img
         src={disconnectIMG}
         alt="404 | Page Not Found"

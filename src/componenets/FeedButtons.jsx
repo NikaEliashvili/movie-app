@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import { IoNavigateCircleOutline } from "react-icons/io5";
 import { AiOutlineHeart } from "react-icons/ai";
 import NavButton from "./NavButton";
