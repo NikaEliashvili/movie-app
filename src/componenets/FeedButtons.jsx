@@ -1,5 +1,4 @@
-import { IoNavigateCircleOutline } from "react-icons/io5";
-import { AiOutlineHeart } from "react-icons/ai";
+import { IoNavigateCircleOutline, IoBagCheckOutline } from "react-icons/io5";
 import NavButton from "./NavButton";
 export default function FeedButtons() {
   return (
@@ -18,7 +17,7 @@ export default function FeedButtons() {
           <NavButton
             to="/watchlist"
             text="Watchlist"
-            Icon={AiOutlineHeart}
+            Icon={IoBagCheckOutline}
             isNavLink={true}
           />
         </div>

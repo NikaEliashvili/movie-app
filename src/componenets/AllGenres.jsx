@@ -1,17 +1,20 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function AllGenres({ data }) {
+  const genreClass = `font-semibold text-sm w-fit text-left mb-1 cursor-pointer text-gray-400
+hover:text-gray-100 py-1 `;
+
   const allGenres = data?.map(({ id, name }) => (
-    <Link
+    <NavLink
       key={id}
       to={`/categories/${name}-${id}`}
       state={{ prevPath: location?.pathname }}
-      className=" font-semibold text-sm w-fit text-left mb-1 cursor-pointer text-gray-400
-      hover:text-gray-100 
-      py-1 "
+      className={({ isActive }) =>
+        isActive ? genreClass + "text-white underline" : genreClass
+      }
     >
       {name}
-    </Link>
+    </NavLink>
   ));
   return (
     <div className="px-2 max-h-[80%] flex flex-col justify-center items-start w-full ">

@@ -72,10 +72,10 @@ const Billboard = memo(function Billboard({
                 handleTriggers();
                 addFavorites(randomTrendingMovie);
               }}
-              className="cursor-pointer flex flex-row justify-center items-center border-2 broder-white rounded-full md:w-7 md:h-7 w-4 h-4 hover:border-gray-400 hover:text-gray-400 text-white
+              className="cursor-pointer flex flex-row justify-center items-center border-2 broder-white rounded-full  w-[1.25rem] h-[1.25rem] sm:w-7 sm:h-7 md:w-7 md:h-7  hover:border-gray-400 hover:text-gray-400 text-white
             "
             >
-              <BsPlus className=" md:text-3xl" />
+              <BsPlus className="text-xl sm:text-2xl md:text-3xl" />
             </div>
           ) : (
             <div
@@ -84,10 +84,10 @@ const Billboard = memo(function Billboard({
                 handleTriggers();
                 removeFavorite(randomTrendingMovie?.id);
               }}
-              className="cursor-pointer flex flex-row justify-center items-center border-0 broder-white rounded-full md:w-7 md:h-7 w-4 h-4 hover:border-gray-400 hover:text-gray-400 text-white
+              className="cursor-pointer flex flex-row justify-center items-center border-0 broder-white rounded-full hover:border-gray-400 hover:text-gray-400 text-white
             "
             >
-              <BsFillBagCheckFill className=" md:text-3xl" />
+              <BsFillBagCheckFill className="text-xl sm:text-3xl md:text-3xl" />
             </div>
           )}
         </div>

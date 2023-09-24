@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import NavButton from "./NavButton";
 
-import { IoNavigateCircleOutline, IoBagCheckSharp } from "react-icons/io5";
+import { IoNavigateCircleOutline, IoBagCheckOutline } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useMovies, GENRE_URL } from "../useHooks/useApi";
 import SearchInput from "./SearchInput";
@@ -69,7 +69,11 @@ export default function Navbar() {
         {isMobileScreen && pathname === "/watchlist" ? (
           <NavButton Icon={IoNavigateCircleOutline} to="/" text="Browse" />
         ) : isMobileScreen && pathname === "/" ? (
-          <NavButton Icon={IoBagCheckSharp} to="/watchlist" text="Watchlist" />
+          <NavButton
+            Icon={IoBagCheckOutline}
+            to="/watchlist"
+            text="Watchlist"
+          />
         ) : isMobileScreen ? (
           <div className="flex justify-center items-center gap-5 brightness-200">
             <NavButton
@@ -79,7 +83,7 @@ export default function Navbar() {
               isNavLink={true}
             />
             <NavButton
-              Icon={IoBagCheckSharp}
+              Icon={IoBagCheckOutline}
               to="/watchlist"
               text={!isMobileScreen ? "Watchlist" : ""}
               isNavLink={true}

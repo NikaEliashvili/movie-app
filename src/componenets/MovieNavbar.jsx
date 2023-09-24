@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
 import NavButton from "../componenets/NavButton";
-import { IoNavigateCircleOutline } from "react-icons/io5";
-import { BsFillBagCheckFill } from "react-icons/bs";
+import { IoNavigateCircleOutline, IoBagCheckOutline } from "react-icons/io5";
 import SearchInput from "../componenets/SearchInput";
 export default function MovieNavbar() {
   const [isMobileScreen, setIsMobileScreen] = useState(window.innerWidth < 768);
@@ -46,7 +45,7 @@ export default function MovieNavbar() {
             isNavLink={true}
           />
           <NavButton
-            Icon={BsFillBagCheckFill}
+            Icon={IoBagCheckOutline}
             to="/watchlist"
             text={!isMobileScreen ? "Watchlist" : ""}
             isNavLink={true}
