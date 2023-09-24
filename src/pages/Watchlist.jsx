@@ -60,10 +60,10 @@ export default function Watchlist() {
     );
   }
   return (
-    <div className="w-full text-center px-5">
-      <h1 className="text-white text-2xl w-fit">Watchlist</h1>
+    <div className="w-full  sm:pl-3 text-center scroll-smooth min-h-[20rem]">
+      <h1 className="text-white text-2xl w-fit ml-3">Watchlist</h1>
       <div
-        className=" w-full rounded-lg  flex flex-wrap gap-5 
+        className=" mx-auto w-full rounded-lg  flex flex-wrap gap-5 justify-around sm:justify-start
         "
       >
         {favoriteItems}

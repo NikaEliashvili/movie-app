@@ -37,12 +37,12 @@ const MovieCard = memo(function MovieCard({
   return (
     <div
       key={movie?.id}
-      className="relative group flex-shrink-0 bg-gradient-to-br from-indigo-500 to-indigo-300 md:w-[9rem] md:min-h-[12rem] w-[6rem] min-h-[5rem] rounded-lg flex justify-center items-center animate-wiggle transform-none  overflow-hidden grow-1"
+      className="relative overflow-hidden group flex-shrink-0 bg-gradient-to-br from-indigo-500 to-indigo-300 md:w-[9rem] md:min-h-[12rem] w-[8.5rem] min-h-[5rem] rounded-lg flex justify-center items-center animate-wiggle transform-none   grow-1"
     >
       <LazyLoadImage
         className={`lozard w-full h-full object-cover brightness-105 cursor-pointer animate-imgTransition 
         group-hover:brightness-[20%] gradient-to-r
-        delay-300 duration-500 transition rounded-md
+        delay-300 duration-500 transition rounded-md 
         ${!movie?.poster_path && "bg-gray-300 brightness-75"}
         `}
         src={imagePath}
@@ -58,10 +58,10 @@ const MovieCard = memo(function MovieCard({
           <Link
             to={"/movies/" + movie.id}
             state={{ prevPath: location?.pathname }}
-            className="flex flex-row justify-center items-center bg-white rounded-full md:w-7 md:h-7 w-4 h-4 hover:bg-gray-400
+            className="flex flex-row justify-center items-center bg-white rounded-full md:w-7 md:h-7 w-7 h-7 hover:bg-gray-400
             "
           >
-            <BsFillPlayFill className="md:ml-1 ml-[1px] text-slate-900 md:text-3xl " />
+            <BsFillPlayFill className="md:ml-1 ml-[3px] text-slate-900 md:text-3xl  text-2xl " />
           </Link>
           {!isFavorited ? (
             <div
@@ -70,10 +70,10 @@ const MovieCard = memo(function MovieCard({
                 handleTriggers();
                 addFavorites(movie);
               }}
-              className="cursor-pointer flex flex-row justify-center items-center border-2 broder-white rounded-full md:w-7 md:h-7 w-4 h-4 hover:border-gray-400 hover:text-gray-400 text-white
+              className="cursor-pointer flex flex-row justify-center items-center border-2 broder-white rounded-full md:w-7 md:h-7 w-7 h-7 hover:border-gray-400 hover:text-gray-400 text-white
             "
             >
-              <BsPlus className=" md:text-3xl" />
+              <BsPlus className=" md:text-3xl text-2xl" />
             </div>
           ) : (
             <div
@@ -82,22 +82,22 @@ const MovieCard = memo(function MovieCard({
                 handleTriggers();
                 removeFavorite(movie?.id);
               }}
-              className="cursor-pointer flex flex-row justify-center items-center border-0 broder-white rounded-full md:w-7 md:h-7 w-4 h-4 hover:border-gray-400 hover:text-gray-400 text-white
+              className="cursor-pointer flex flex-row justify-center items-center border-0 broder-white rounded-full md:w-7 md:h-7 w-7 h-7 hover:border-gray-400 hover:text-gray-400 text-white
             "
             >
-              <BsFillBagCheckFill className=" md:text-3xl" />
+              <BsFillBagCheckFill className=" md:text-3xl text-2xl" />
             </div>
           )}
         </div>
         <div className="text-white cursor-pointer flex flex-col w-full justify-start items-start md:px-3 px-2">
-          <p className="md:text-sm text-[10px] text-left ">
+          <p className="md:text-sm text-[16px] font-bold text-left ">
             {movie?.title?.length > 20
               ? movie?.title.slice(0, 20) + "..."
               : movie?.title}
           </p>
           <div className="flex flex-col w-full justify-start items-start  md:mt-2">
             {movie?.vote_average && (
-              <p className="flex justify-between items-center gap-1 ml-auto md:text-sm text-[10px]">
+              <p className="flex justify-between items-center gap-1 ml-auto md:text-sm text-[13px]">
                 <AiFillStar className="mt-[2px] text-orange-400" />
                 {movie?.vote_average - parseInt(movie?.vote_average) === 0
                   ? movie?.vote_average + ".0"
@@ -105,7 +105,7 @@ const MovieCard = memo(function MovieCard({
               </p>
             )}
             {movie?.release_date && (
-              <p className="md:text-xs text-[8px]  text-left ml-auto text-zinc-300">
+              <p className="md:text-xs text-[11px]  text-left ml-auto text-zinc-300">
                 {movie?.release_date}
               </p>
             )}

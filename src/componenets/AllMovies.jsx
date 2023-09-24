@@ -51,14 +51,14 @@ const AllMovies = memo(function AllMovies({ handleTriggers, FavoritedIds }) {
   }
 
   return (
-    <div className="w-full text-center scroll-smooth min-h-[20rem]">
+    <div className="w-full  sm:pl-3 text-center scroll-smooth min-h-[20rem]">
       <h1
         className="text-white md:text-2xl text-xl ml-1 md:ml-0 w-fit "
         id="topBorder"
       >
         All Movies
       </h1>
-      <div className="mx-auto w-full rounded-lg  flex flex-wrap gap-5 justify-start">
+      <div className="mx-auto w-full rounded-lg  flex flex-wrap gap-5 justify-around sm:justify-start">
         {allMovieCards}
       </div>
       <PagesChangingBtns
