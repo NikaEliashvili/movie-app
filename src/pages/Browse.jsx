@@ -51,9 +51,12 @@ const Browse = memo(function Browse({
       <Billboard
         baseUrl={imageBaseUrl}
         srcUrl={randomTrendingMovie?.backdrop_path}
+        randomTrendingMovie={randomTrendingMovie}
         title={randomTrendingMovie?.title}
         description={randomTrendingMovie?.overview}
         movieId={randomTrendingMovie?.id}
+        handleTriggers={handleTriggers}
+        FavoritedIds={FavoritedIds}
       />
       <MoviesList
         data={upcomingData}

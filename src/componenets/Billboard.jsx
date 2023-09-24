@@ -1,6 +1,10 @@
 import { AiFillFire } from "react-icons/ai";
+import { BsPlus, BsFillBagCheckFill } from "react-icons/bs";
 import PlayButton from "./PlayButton";
-import { memo } from "react";
+import { memo, useState, useEffect } from "react";
+
+import addFavorites from "../useHooks/addFavorites";
+import removeFavorite from "../useHooks/removeFavorite";
 
 const Billboard = memo(function Billboard({
   baseUrl,
@@ -8,16 +12,33 @@ const Billboard = memo(function Billboard({
   title,
   description,
   movieId,
+  randomTrendingMovie,
+  handleTriggers,
+  FavoritedIds,
 }) {
+  console.log(randomTrendingMovie);
+  const [isFavorited, setIsFavorited] = useState(
+    FavoritedIds?.some((item) => item.id === randomTrendingMovie.id) || false
+  );
+  useEffect(() => {
+    setIsFavorited(
+      FavoritedIds?.some((item) => item.id === randomTrendingMovie.id) || false
+    );
+  }, [FavoritedIds]);
+
+  const handleIsFavorite = () => {
+    setIsFavorited(!isFavorited);
+  };
+
   const checkDescription =
     description.split(" ").length > 60
       ? description.split(" ").slice(1, 60).join(" ") + "..."
       : description;
 
   return (
-    <div className="relative w-full bg-slate-700 mb-2 md:rounded-lg">
+    <div className="relative w-full bg-slate-700 mb-2 rounded-lg">
       <div
-        className="overflow-hidden w-full h-[300px] md:h-[350px] lg:h-[400px] md:rounded-lg flex justify-center items-center relative object-cover before:content-[''] before:absolute
+        className="overflow-hidden w-full h-[300px] md:h-[350px] lg:h-[400px] rounded-lg flex justify-center items-center relative object-cover before:content-[''] before:absolute
         before:bg-black before:bg-opacity-80 before:blur-[10px] md:before:w-[55%] before:w-[65%] lg:before:w-[48%] before:h-[180%] before:-top-6 before:-left-6 
         "
       >
@@ -42,8 +63,33 @@ const Billboard = memo(function Billboard({
         <p className="text-left font-sans font-normal text-[10px] xl:text-sm 2xl:text-lg text-gray-400 leading-none whitespace-normal ">
           {checkDescription || `No Description...`}
         </p>
-        <div className="mt-[1rem]">
+        <div className="mt-[1rem] flex  items-center gap-5">
           <PlayButton movieId={movieId} />
+          {!isFavorited ? (
+            <div
+              onClick={() => {
+                handleIsFavorite();
+                handleTriggers();
+                addFavorites(randomTrendingMovie);
+              }}
+              className="cursor-pointer flex flex-row justify-center items-center border-2 broder-white rounded-full md:w-7 md:h-7 w-4 h-4 hover:border-gray-400 hover:text-gray-400 text-white
+            "
+            >
+              <BsPlus className=" md:text-3xl" />
+            </div>
+          ) : (
+            <div
+              onClick={() => {
+                handleIsFavorite();
+                handleTriggers();
+                removeFavorite(randomTrendingMovie?.id);
+              }}
+              className="cursor-pointer flex flex-row justify-center items-center border-0 broder-white rounded-full md:w-7 md:h-7 w-4 h-4 hover:border-gray-400 hover:text-gray-400 text-white
+            "
+            >
+              <BsFillBagCheckFill className=" md:text-3xl" />
+            </div>
+          )}
         </div>
       </div>
     </div>

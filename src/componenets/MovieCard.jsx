@@ -96,15 +96,19 @@ const MovieCard = memo(function MovieCard({
               : movie?.title}
           </p>
           <div className="flex flex-col w-full justify-start items-start  md:mt-2">
-            <p className="flex justify-between items-center gap-1 ml-auto md:text-sm text-[10px]">
-              <AiFillStar className="mt-[2px] text-orange-400" />
-              {movie?.vote_average - parseInt(movie?.vote_average) === 0
-                ? movie?.vote_average + ".0"
-                : movie?.vote_average.toFixed(1)}
-            </p>
-            <p className="md:text-xs text-[8px]  text-left ml-auto text-zinc-300">
-              {movie?.release_date}
-            </p>
+            {movie?.vote_average && (
+              <p className="flex justify-between items-center gap-1 ml-auto md:text-sm text-[10px]">
+                <AiFillStar className="mt-[2px] text-orange-400" />
+                {movie?.vote_average - parseInt(movie?.vote_average) === 0
+                  ? movie?.vote_average + ".0"
+                  : movie?.vote_average?.toFixed(1)}
+              </p>
+            )}
+            {movie?.release_date && (
+              <p className="md:text-xs text-[8px]  text-left ml-auto text-zinc-300">
+                {movie?.release_date}
+              </p>
+            )}
           </div>
         </div>
       </div>
