@@ -37,7 +37,7 @@ const MoviesList = memo(function MoviesList({
       </h1>
       <div
         ref={scrollRef}
-        className="scroll-smooth w-full h-[200px] rounded-lg  flex flex-row overflow-x-auto gap-5 
+        className="scroll-smooth w-full h-[200px] snap-x rounded-lg  flex flex-row overflow-x-auto gap-5 
         "
       >
         {allMovieCards}

@@ -37,7 +37,7 @@ const MovieCard = memo(function MovieCard({
   return (
     <div
       key={movie?.id}
-      className="relative overflow-hidden group flex-shrink-0 bg-gradient-to-br from-indigo-500 to-indigo-300 md:w-[9rem] md:min-h-[12rem] w-[8.5rem] min-h-[5rem] rounded-lg flex justify-center items-center animate-wiggle transform-none   grow-1"
+      className="relative overflow-hidden group flex-shrink-0 bg-gradient-to-br from-indigo-500 to-indigo-300 md:w-[9rem] md:min-h-[12rem] w-[8.5rem] min-h-[5rem] rounded-lg flex justify-center items-center animate-wiggle transform-none   grow-1 snap-start"
     >
       <LazyLoadImage
         className={`lozard w-full h-full object-cover brightness-105 cursor-pointer animate-imgTransition 
